@@ -100,3 +100,30 @@ footer {
     display: flex;
     flex-wrap: wrap;
 }
+
+/* .gobbie img {
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+.gobbie-doom {
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(/assets/gobbie.png) no-repeat;
+    width: 230px; /* Width of new image */
+    height: 236px; /* Height of new image */
+    padding-left: 180px; /* Equal to width of new image */
+
+}
+
+.gobbie-boom {
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(/assets/explosion.gif);
+    width: 180px; /* Width of new image */
+    height: 236px; /* Height of new image */
+    padding-left: 180px; /* Equal to width of new image */
+
+}

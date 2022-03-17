@@ -4,6 +4,7 @@ const formEl = document.querySelector('form');
 const gobbieListEl = document.querySelector('.goblin-list');
 const defeatedGobbiesEl = document.querySelector('.defeated-goblins');
 const playerHPEl = document.querySelector('.player-hp');
+const gameOverEl = document.querySelector('Game-End');
 
 // let state
 let playerHP = 10;
@@ -15,7 +16,6 @@ const gobbies = [
 
 formEl.addEventListener('submit', (e) => {
     e.preventDefault();
-    // alert('submitted form test');
 
     const data = new FormData(formEl);
 
@@ -57,9 +57,12 @@ function displayGobbies() {
                 }
                 if (gobbie.hp === 0) {
                     gobbiefolkDefeated++;
-                    defeatedGobbiesEl.textContent = `You've murdered ${gobbiefolkDefeated} gobbiefolk`;
+                    defeatedGobbiesEl.textContent = `You've murdered ${gobbiefolkDefeated} gobbiefolk(s)`;
                 }}
-            // console.log(gobbies);
+            if (playerHP === 0) {
+                gameOverEl.textContent = 'You and your friends are dead. Game over';
+            }
+            
             displayGobbies();
             playerHPEl.textContent = `Your HP is currently: ${playerHP}`;
 
