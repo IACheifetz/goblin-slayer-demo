@@ -23,7 +23,7 @@ export function renderGobbieEl(gobbie) {
     }
 
     nameEl.textContent = gobbie.name;
-    HpEl.textContent = `${gobbiePic} ${gobbie.hp}`;
+    HpEl.textContent = `${gobbiePic} (${gobbie.hp})`;
 
     gobbieEl.append(nameEl, HpEl);
 

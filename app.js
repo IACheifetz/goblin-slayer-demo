@@ -39,6 +39,29 @@ function displayGobbies() {
     for (let gobbie of gobbies) {
         const gobbieEl = renderGobbieEl(gobbie);
 
+
+        gobbieEl.addEventListener('click', () =>{
+            if (gobbie.hp > 0){
+                if (Math.random() > .5) {
+                    gobbie.hp--;
+                    alert(gobbie.name + ' got hit');
+                } else {
+                    alert('You missed ' + gobbie.name);
+                }
+
+                if (Math.random() < .33) {
+                    playerHP--;
+                    alert(gobbie.name + ' hit you');
+                } else {
+                    alert(gobbie.name + ' missed you');
+                }
+                if (gobbie.hp === 0) {
+                    gobbiefolkDefeated++;
+                }}
+            // console.log(gobbies);
+            displayGobbies();
+            playerHPEl.textContent = playerHP;
+        });
         gobbieListEl.append(gobbieEl);
     }
 
