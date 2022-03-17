@@ -89,3 +89,14 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
+
+.gobbie {
+    background-color: olive;
+    display: flex;
+    margin: 15px;
+}
+
+.gobbie-list {
+    display: flex;
+    flex-wrap: wrap;
+}
