@@ -57,10 +57,12 @@ function displayGobbies() {
                 }
                 if (gobbie.hp === 0) {
                     gobbiefolkDefeated++;
+                    defeatedGobbiesEl.textContent = `You've murdered ${gobbiefolkDefeated} gobbiefolk`;
                 }}
             // console.log(gobbies);
             displayGobbies();
-            playerHPEl.textContent = playerHP;
+            playerHPEl.textContent = `Your HP is currently: ${playerHP}`;
+
         });
         gobbieListEl.append(gobbieEl);
     }
