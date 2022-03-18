@@ -49,14 +49,14 @@ function displayGobbies() {
                     gobbie.hp--;
                     alert(gobbie.name + ' got hit');
                 } else {
-                    alert('You missed ' + gobbie.name);
+                    alert('Uplander missed ' + gobbie.name);
                 }
 
                 if (Math.random() < .33) {
                     playerHP -= gobbie.strength;
-                    alert(gobbie.name + ' hit you');
+                    alert(gobbie.name + ' hit the Uplander');
                 } else {
-                    alert('You dodged ' + gobbie.name + '\'s attack!');
+                    alert('Uplander dodged ' + gobbie.name + '\'s attack!');
                 }
 
                 if (gobbie.hp === 0) {
