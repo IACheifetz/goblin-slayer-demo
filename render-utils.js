@@ -20,6 +20,9 @@ export function renderGobbieEl(gobbie) {
     } else {
         HpEl.classList.add('gobbie-boom');
     }
+    if (gobbie.strength > 2) {
+        HpEl.classList.add('gobbie-gloom');
+    }
 
 
     // if (gobbie.hp === 1 || 
