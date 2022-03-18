@@ -29,7 +29,7 @@ function displayPlayer() {
         playerHPEl.classList.add('player-dead');
     }
 
-};
+}
 
 //submit and event for form to prevent clicking causing issues
 formEl.addEventListener('submit', (e) => {
