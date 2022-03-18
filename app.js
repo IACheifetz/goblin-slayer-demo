@@ -55,7 +55,7 @@ formEl.addEventListener('submit', (e) => {
         displayGobbies();
     //clears out the form and its data for the next input at the end of the event 
         formEl.reset();} else {
-        alert('You and your friends are dead. Restarting...');
+        alert('You and your friends are dead. Try again?');
     }
 });
 
