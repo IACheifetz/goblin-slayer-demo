@@ -126,8 +126,9 @@ footer {
     display: block;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    background: url(/assets/explosion.gif);
+    background: url(/assets/explosion.gif) no-repeat;
     width: 180px; /* Width of new image */
-    height: 236px; /* Height of new image */
+    height: 150px; /* Height of new image */
+    background-size: contain;
     padding-left: 180px; /* Equal to width of new image */
 }
