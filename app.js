@@ -5,9 +5,12 @@ const gobbieListEl = document.querySelector('.goblin-list');
 const defeatedGobbiesEl = document.querySelector('.defeated-goblins');
 const playerHPEl = document.querySelector('.player-hp');
 const playerExpEl = document.querySelector('.player-exp');
+const potionEl = document.querySelector('.potion-count');
+const potionBtnUse = document.querySelector('.potionUse');
 
 
 // let state
+let hpPotion = 0;
 let playerStrength = 1;
 let playerExp = 0;
 let playerHP = 10;
@@ -19,9 +22,9 @@ const gobbies = [
 ];
 //submit and event for form to prevent clicking causing issues
 formEl.addEventListener('submit', (e) => {
+  //and event.preventDefault to keep info from being appended to URL and refreshing
+    e.preventDefault();  
     if (playerHP > 0) {
-      //and event.preventDefault to keep info from being appended to URL and refreshing
-        e.preventDefault();
   //constant variable declared to take in data from form input
         const data = new FormData(formEl);
 //variable providing format for producing new gobbie objects when form is submitted
@@ -32,6 +35,7 @@ formEl.addEventListener('submit', (e) => {
             hp: Math.ceil(Math.random() * 6),
         //sets damage dealt to a random number between 1 and 5
             strength: Math.ceil(Math.random() * 5),
+            //sets hit chance dealt to a random decimal between 0 and 1
             accuracy: (Math.random())
         };
     //inserts newGobbie variable at the beginning of the gobbies array 
@@ -88,6 +92,11 @@ function displayGobbies() {
                     //h3 element set to update with concatenated string with of count of defeated gobbies
                     defeatedGobbiesEl.textContent = `Uplander's murderkilled ${gobbiefolkDefeated} innocent gobbiefolk(s)`;
                 }
+                if (gobbiefolkDefeated >= 3 && hpPotion === 0 || gobbiefolkDefeated >= 7 && hpPotion === 0 || gobbiefolkDefeated >= 12 && hpPotion === 0 || gobbiefolkDefeated >= 17 && hpPotion === 0)
+                {
+                    hpPotion++;
+                }
+                potionEl.textContent = `Healing Potions: ${hpPotion}`;
             }
                 //if statement declaring results if player's health reaches or goes below zero
             if (playerHP <= 0) {
@@ -109,6 +118,29 @@ function displayGobbies() {
 }
 
 function levelUp() {
-    if (playerExp === 1 || playerExp === 5 || playerExp === 9 || playerExp === 15 || playerExp === 21){
-        playerStrength++; playerHP++;
-    }}
+    if (playerExp === 1){
+        playerStrength++; 
+        playerHP += 2;
+    } else if (playerExp === 5){
+        playerStrength++; 
+        playerHP += 2;
+    } else if (playerExp === 11){
+        playerStrength++; 
+        playerHP += 2;
+    } else if (playerExp === 18){
+        playerStrength++; 
+        playerHP += 2;
+    } else if (playerExp === 29){
+        playerStrength++; 
+        playerHP += 2;
+    }
+}
+
+potionBtnUse.addEventListener('click', () => {
+    if (hpPotion > 0) {hpPotion--;
+        playerHP += Math.floor(Math.random() * 5);
+        playerHPEl.textContent = `Uplander HP is currently: ${playerHP}`;
+        potionEl.textContent = `Healing Potions: ${hpPotion}`;}
+
+    // console.log(playerHP);
+});
