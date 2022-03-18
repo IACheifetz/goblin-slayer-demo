@@ -18,10 +18,15 @@ export function renderGobbieEl(gobbie) {
 
 
     //if statement to add a class based on gobbie health
-    if (gobbie.hp > 0) {
+    if (gobbie.hp > 2) {
         //adds a class for styling if gobbie is alive
         HpEl.classList.add('gobbie-doom');
-    } else {
+    } else if (gobbie.hp <= 2 && gobbie.strength > 2) {
+        HpEl.classList.add('gobbie-strongAngry');
+    } else if (gobbie.hp <= 2) {
+        HpEl.classList.add('gobbie-angry');
+    } 
+    if (gobbie.hp === 0) {
         //adds a class for styling if gobbie dies
         HpEl.classList.add('gobbie-boom');
     }

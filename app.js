@@ -54,7 +54,7 @@ function displayGobbies() {
         //adds an eventListener for clicking on the div rendered by imported function
         gobbieEl.addEventListener('click', () =>{
           //if statement to disable click function on gobbie divs if the gobbie has died
-            if (gobbie.hp > 0, playerHP > 0){
+            if (gobbie.hp > 0 && playerHP > 0){
                 //if statement determining with a 50% chance from math.random if the player hits the gobbie when clicked
                 if (Math.random() > .5) {
                   //results of if statement, gobbie loses 1 hitpoint
@@ -82,7 +82,8 @@ function displayGobbies() {
                     gobbiefolkDefeated++;
                     //h3 element set to update with concatenated string with of count of defeated gobbies
                     defeatedGobbiesEl.textContent = `Uplander's murderkilled ${gobbiefolkDefeated} innocent gobbiefolk(s)`;
-                }}
+                }
+            }
                 //if statement declaring results if player's health reaches or goes below zero
             if (playerHP <= 0) {
               //populates an alert stating that the game is over (currently no effect on "gameplay")

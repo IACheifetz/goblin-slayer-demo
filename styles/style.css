@@ -132,6 +132,26 @@ footer {
     padding-left: 205px; /* Equal to width of new image */
 }
 
+.gobbie-strongAngry {
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(/assets/gobbieStrongAngry.png) no-repeat;
+    width: 230px; /* Width of new image */
+    height: 236px; /* Height of new image */
+    padding-left: 205px; /* Equal to width of new image */
+}
+
+.gobbie-angry {
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(/assets/angryGob.png) no-repeat;
+    width: 230px; /* Width of new image */
+    height: 236px; /* Height of new image */
+    padding-left: 205px; /* Equal to width of new image */
+}
+
 .gobbie-boom {
     display: block;
     -moz-box-sizing: border-box;
