@@ -59,6 +59,7 @@ formEl.addEventListener('submit', (e) => {
     }
 });
 
+displayPlayer();
 displayGobbies();
 
 function displayGobbies() {
