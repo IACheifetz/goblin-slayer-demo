@@ -61,7 +61,7 @@ function displayGobbies() {
 
                 if (gobbie.hp === 0) {
                     gobbiefolkDefeated++;
-                    defeatedGobbiesEl.textContent = `You've murderkilled ${gobbiefolkDefeated} innocent gobbiefolk(s)`;
+                    defeatedGobbiesEl.textContent = `Uplander's murderkilled ${gobbiefolkDefeated} innocent gobbiefolk(s)`;
                 }}
 
             if (playerHP === 0) {
@@ -69,7 +69,7 @@ function displayGobbies() {
             }
             
             displayGobbies();
-            playerHPEl.textContent = `Your HP is currently: ${playerHP}`;
+            playerHPEl.textContent = `Uplander HP is currently: ${playerHP}`;
 
         });
         gobbieListEl.append(gobbieEl);
