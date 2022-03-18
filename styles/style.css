@@ -28,7 +28,7 @@ body {
     --footer-height: 25px;
     
     font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color2);
+    background-color: darkgray;
 }
 
 main {
@@ -37,12 +37,14 @@ main {
     justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
+    background-color: darkgray;
 }
 
-section {
-    background-color: var(--color5);
+.main-section {
+    background-color: darkgray;
+    /* width: 1200px; */
     max-width: 80%;
-    display: flex;
+    display: inline-block;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -50,7 +52,8 @@ section {
     padding-bottom: var(--gutter);
     margin-top: var(--gutter);
     margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
+    border: solid 2px black;
+
 }
 
 header {
@@ -86,14 +89,16 @@ footer {
     height: var(--footer-height);
     display: flex;
     justify-content: flex-end;
-    background-color: var(--color3);
+    background-color: darkgray;
     box-shadow: var(--shadow);
 }
 
 .gobbie {
     background-color: olive;
-    display: flex;
+    display: inline-block;
     margin: 15px;
+    width: 290px;
+    height: 250px;
 }
 
 .gobbie-list {
@@ -113,7 +118,7 @@ footer {
     background: url(/assets/gobbie.png) no-repeat;
     width: 230px; /* Width of new image */
     height: 236px; /* Height of new image */
-    padding-left: 180px; /* Equal to width of new image */
+    padding-left: 205px; /* Equal to width of new image */
 
 }
 
@@ -125,5 +130,4 @@ footer {
     width: 180px; /* Width of new image */
     height: 236px; /* Height of new image */
     padding-left: 180px; /* Equal to width of new image */
-
 }

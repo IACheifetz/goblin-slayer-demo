@@ -1,13 +1,13 @@
 export function renderGobbieEl(gobbie) {
     const gobbieEl = document.createElement('div');
-    const nameEl = document.createElement('p');
-    const HpEl = document.createElement('p');
+    const nameEl = document.createElement('h2');
+    const HpEl = document.createElement('h2');
     
     gobbieEl.classList.add('gobbie');
 
     
 
-    const newGobbiePic = document.createElement('img');
+    // const newGobbiePic = document.createElement('img');
 
     // const gobbiePic = gobbie.hp > 0 ? imgEl.src = './assets/gobbie.png' : imgEl.src = './assets/explosion.gif';
     // document.body.append(imgEl);
