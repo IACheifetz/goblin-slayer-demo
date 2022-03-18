@@ -64,7 +64,7 @@ function displayGobbies() {
                     defeatedGobbiesEl.textContent = `Uplander's murderkilled ${gobbiefolkDefeated} innocent gobbiefolk(s)`;
                 }}
 
-            if (playerHP === 0) {
+            if (playerHP <= 0) {
                 alert('You and your friends are dead. Game over');
             }
             
