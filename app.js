@@ -93,7 +93,7 @@ function displayGobbies() {
             displayGobbies();
             //updates HTML element with player health if necessary
             playerHPEl.textContent = `Uplander HP is currently: ${playerHP}`;
-
+            
         });
         //adds the dynamic gobbie div created in this function to the gobbie list div
         gobbieListEl.append(gobbieEl);
