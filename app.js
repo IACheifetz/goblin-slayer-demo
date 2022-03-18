@@ -4,9 +4,12 @@ const formEl = document.querySelector('form');
 const gobbieListEl = document.querySelector('.goblin-list');
 const defeatedGobbiesEl = document.querySelector('.defeated-goblins');
 const playerHPEl = document.querySelector('.player-hp');
+const playerExpEl = document.querySelector('.player-exp');
 
 
 // let state
+let playerStrength = 1;
+let playerExp = 0;
 let playerHP = 10;
 let gobbiefolkDefeated = 0;
 const gobbies = [
@@ -58,7 +61,7 @@ function displayGobbies() {
                 //if statement determining with a 50% chance from math.random if the player hits the gobbie when clicked
                 if (Math.random() > .5) {
                   //results of if statement, gobbie loses 1 hitpoint
-                    gobbie.hp--;
+                    gobbie.hp -= playerStrength;
                     //and an alert populates notifying that the specific gobbie was hit
                     alert(gobbie.name + ' got hit');
                     //else argument if the 50% chance fails
@@ -77,9 +80,11 @@ function displayGobbies() {
                     alert('Uplander dodged ' + gobbie.name + '\'s attack!');
                 }
                 //if statement based on if gobbie's hitpoints reaches zero
-                if (gobbie.hp === 0) {
+                if (gobbie.hp <= 0) {
                   //counter for number of gobbies defeated increments by one
                     gobbiefolkDefeated++;
+                    playerExp++;
+                    levelUp();
                     //h3 element set to update with concatenated string with of count of defeated gobbies
                     defeatedGobbiesEl.textContent = `Uplander's murderkilled ${gobbiefolkDefeated} innocent gobbiefolk(s)`;
                 }
@@ -93,6 +98,8 @@ function displayGobbies() {
             displayGobbies();
             //updates HTML element with player health if necessary
             playerHPEl.textContent = `Uplander HP is currently: ${playerHP}`;
+            playerExpEl.textContent = `Uplander EXP: ${playerExp}`;
+            
             
         });
         //adds the dynamic gobbie div created in this function to the gobbie list div
@@ -101,3 +108,7 @@ function displayGobbies() {
 
 }
 
+function levelUp() {
+    if (playerExp === 1 || playerExp === 5 || playerExp === 9 || playerExp === 15 || playerExp === 21){
+        playerStrength++; playerHP++;
+    }}

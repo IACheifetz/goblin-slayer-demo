@@ -19,14 +19,17 @@ export function renderGobbieEl(gobbie) {
 
     //if statement to add a class based on gobbie health
     if (gobbie.hp > 2) {
-        //adds a class for styling if gobbie is alive
+        //adds a class for styling if gobbie is over 2 health
         HpEl.classList.add('gobbie-doom');
     } else if (gobbie.hp <= 2 && gobbie.strength > 2) {
+        //adds a class for styling if gobbie is over 2 health and strength
         HpEl.classList.add('gobbie-strongAngry');
     } else if (gobbie.hp <= 2) {
+        //adds a class for styling if gobbie is under 2 health
         HpEl.classList.add('gobbie-angry');
     } 
-    if (gobbie.hp === 0) {
+    //if statement to add a class if gobbie health reaches zero
+    if (gobbie.hp <= 0) {
         //adds a class for styling if gobbie dies
         HpEl.classList.add('gobbie-boom');
     }
@@ -36,21 +39,6 @@ export function renderGobbieEl(gobbie) {
         HpEl.classList.add('gobbie-gloom');
     }
 
-
-    // if (gobbie.hp === 1 || 
-    //     gobbie.hp === 2 || 
-    //     gobbie.hp === 3 || 
-    //     gobbie.hp === 4 || 
-    //     gobbie.hp === 5 || 
-    //     gobbie.hp === 6) {
-
-    //     gobbiePic = '👺';
-
-    // } else if (gobbie.hp < 1) { 
-    //     //boom gobbie doom
-    //     gobbiePic = '💀';
-
-    // }
         //sets nameEl h2 text created by function to be the name received from form input
     nameEl.textContent = gobbie.name;
         //sets HpEl text to be equal to the randomly generated health value generated in the newGobbie object
