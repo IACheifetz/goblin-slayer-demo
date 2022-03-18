@@ -20,6 +20,17 @@ const gobbies = [
     { name: 'Uptalks', hp: 3, strength: 1, accuracy: Math.random() }, 
     { name: 'Longflops', hp: 1, strength: 1, accuracy: Math.random() }
 ];
+
+function displayPlayer() {
+
+    if (playerHP > 0) {
+        playerHPEl.classList.add('player-live');
+    } else if (playerHP <= 0) {
+        playerHPEl.classList.add('player-dead');
+    }
+
+};
+
 //submit and event for form to prevent clicking causing issues
 formEl.addEventListener('submit', (e) => {
   //and event.preventDefault to keep info from being appended to URL and refreshing
@@ -92,7 +103,7 @@ function displayGobbies() {
                     //h3 element set to update with concatenated string with of count of defeated gobbies
                     defeatedGobbiesEl.textContent = `Uplander's murderkilled ${gobbiefolkDefeated} innocent gobbiefolk(s)`;
                 }
-                if (gobbiefolkDefeated >= 3 && hpPotion === 0 || gobbiefolkDefeated >= 7 && hpPotion === 0 || gobbiefolkDefeated >= 12 && hpPotion === 0 || gobbiefolkDefeated >= 17 && hpPotion === 0)
+                if (gobbiefolkDefeated === 3 && hpPotion === 0 || gobbiefolkDefeated === 7 && hpPotion === 0 || gobbiefolkDefeated === 12 && hpPotion === 0 || gobbiefolkDefeated === 17 && hpPotion === 0)
                 {
                     hpPotion++;
                 }
@@ -105,18 +116,22 @@ function displayGobbies() {
             }
             //calls the displayGobbies function within the eventListener inside the displayGobbies function to execute
             displayGobbies();
+            displayPlayer();
             //updates HTML element with player health if necessary
             playerHPEl.textContent = `Uplander HP is currently: ${playerHP}`;
+            //updates HTML element with player exp if necessary
             playerExpEl.textContent = `Uplander EXP: ${playerExp}`;
             
             
         });
         //adds the dynamic gobbie div created in this function to the gobbie list div
+
         gobbieListEl.append(gobbieEl);
     }
 
 }
 
+//function with if else statements to increase player power and heal them slightly when they meet certain thresholds
 function levelUp() {
     if (playerExp === 1){
         playerStrength++; 

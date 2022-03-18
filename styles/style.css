@@ -169,3 +169,26 @@ footer {
     /* opacity: 1; */
     transition: visibility 0s 2s, opacity 2s linear;
 }
+
+.player-live {
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(/assets/livingKnight.png) no-repeat;
+    background-size: contain;
+    width: 230px; /* Width of new image */
+    height: 236px; /* Height of new image */
+    padding-left: 205px; /* Equal to width of new image */
+
+}
+
+.player-dead {
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(/assets/deadKnight.png) no-repeat;
+    background-size: contain;
+    width: 230px; /* Width of new image */
+    height: 236px; /* Height of new image */
+    padding-left: 205px; /* Equal to width of new image */
+}

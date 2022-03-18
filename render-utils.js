@@ -39,6 +39,7 @@ export function renderGobbieEl(gobbie) {
         HpEl.classList.add('gobbie-gloom');
     }
 
+
         //sets nameEl h2 text created by function to be the name received from form input
     nameEl.textContent = gobbie.name;
         //sets HpEl text to be equal to the randomly generated health value generated in the newGobbie object
@@ -48,3 +49,4 @@ export function renderGobbieEl(gobbie) {
         //return statement ending function and declares the div to be returned
     return gobbieEl;
 }
+
