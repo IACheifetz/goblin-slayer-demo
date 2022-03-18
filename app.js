@@ -136,27 +136,31 @@ function displayGobbies() {
 function levelUp() {
     if (playerExp === 1){
         playerStrength++; 
-        playerHP += 2;
+        playerHP += 1;
     } else if (playerExp === 5){
         playerStrength++; 
         playerHP += 2;
     } else if (playerExp === 11){
         playerStrength++; 
-        playerHP += 2;
+        playerHP += 4;
     } else if (playerExp === 18){
         playerStrength++; 
-        playerHP += 2;
+        playerHP += 7;
     } else if (playerExp === 29){
         playerStrength++; 
-        playerHP += 2;
+        playerHP += 9;
     }
 }
 
 potionBtnUse.addEventListener('click', () => {
-    if (hpPotion > 0) {hpPotion--;
+    if (hpPotion > 0) {
+        hpPotion--;
         playerHP += Math.floor(Math.random() * 5);
         playerHPEl.textContent = `Uplander HP is currently: ${playerHP}`;
-        potionEl.textContent = `Healing Potions: ${hpPotion}`;}
+        potionEl.textContent = `Healing Potions: ${hpPotion}`;} else if (hpPotion === 0) {
+        alert('You have no potions!');
+    }
+
 
     // console.log(playerHP);
 });
