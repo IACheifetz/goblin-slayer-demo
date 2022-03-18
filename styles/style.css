@@ -38,6 +38,7 @@ main {
     align-items: center;
     margin-bottom: calc(var(--footer-height));
     background-color: darkgray;
+    clear: both;
 }
 
 .main-section {
@@ -53,6 +54,7 @@ main {
     margin-top: var(--gutter);
     margin-bottom: var(--gutter);
     border: solid 2px black;
+    overflow: auto;
 
 }
 
@@ -99,11 +101,13 @@ footer {
     margin: 15px;
     width: 290px;
     height: 250px;
+    clear: both;
 }
 
 .gobbie-list {
     display: flex;
     flex-wrap: wrap;
+    clear: both;
 }
 
 /* .gobbie img {
