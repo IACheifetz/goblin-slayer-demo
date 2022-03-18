@@ -10,8 +10,9 @@ const playerHPEl = document.querySelector('.player-hp');
 let playerHP = 10;
 let gobbiefolkDefeated = 0;
 const gobbies = [
-    { name: 'Uptalks', hp: 3 }, 
-    { name: 'Longflops', hp: 2 }
+    { name: 'Brayflox', hp: 6, strength: 3 },
+    { name: 'Uptalks', hp: 3, strength: 1 }, 
+    { name: 'Longflops', hp: 1, strength: 1 }
 ];
 
 formEl.addEventListener('submit', (e) => {
@@ -22,6 +23,7 @@ formEl.addEventListener('submit', (e) => {
     const newGobbie = {
         name: data.get('gobbie-name'),
         hp: Math.ceil(Math.random() * 6),
+        strength: Math.ceil(Math.random() * 5)
     };
 
     gobbies.unshift(newGobbie);
@@ -42,6 +44,7 @@ function displayGobbies() {
 
         gobbieEl.addEventListener('click', () =>{
             if (gobbie.hp > 0){
+
                 if (Math.random() > .5) {
                     gobbie.hp--;
                     alert(gobbie.name + ' got hit');
@@ -50,15 +53,17 @@ function displayGobbies() {
                 }
 
                 if (Math.random() < .33) {
-                    playerHP--;
+                    playerHP -= gobbie.strength;
                     alert(gobbie.name + ' hit you');
                 } else {
-                    alert(gobbie.name + ' missed you');
+                    alert('You dodged ' + gobbie.name + '\'s attack!');
                 }
+
                 if (gobbie.hp === 0) {
                     gobbiefolkDefeated++;
                     defeatedGobbiesEl.textContent = `You've murderkilled ${gobbiefolkDefeated} innocent gobbiefolk(s)`;
                 }}
+
             if (playerHP === 0) {
                 alert('You and your friends are dead. Game over');
             }

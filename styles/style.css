@@ -131,4 +131,7 @@ footer {
     height: 150px; /* Height of new image */
     background-size: contain;
     padding-left: 180px; /* Equal to width of new image */
+    /* visibility: hidden; */
+    /* opacity: 1; */
+    transition: visibility 0s 2s, opacity 2s linear;
 }
